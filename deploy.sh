@@ -9,6 +9,6 @@ cd dist
 git init
 git add -A
 git commit -m 'New Deployment'
-git push -f git@github.com:mabarckhoff/vue-facts-app.git master:gh-pages
+git push -f git@github.com:mabarckhoff/vue-quotes-app.git master:gh-pages
 
 cd -

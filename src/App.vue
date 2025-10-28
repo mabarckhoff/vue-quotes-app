@@ -30,7 +30,7 @@ export default {
     async getQuote() {
       this.loading = true
       try {
-        const response = await axios.get('http://api.quotable.io/random')
+        const response = await axios.get('https://api.quotable.io/random')
         this.quote = response.data.content
         this.author = response.data.author
       } catch (error) {
