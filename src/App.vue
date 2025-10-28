@@ -30,8 +30,8 @@ export default {
     async getQuote() {
       this.loading = true
       try {
-        const response = await axios.get('https://api.quotable.io/random')
-        this.quote = response.data.content
+        const response = await axios.get('https://www.quoterism.com/api/quotes/random')
+        this.quote = response.data.text
         this.author = response.data.author
       } catch (error) {
         console.error('Error fetching quote:', error)
