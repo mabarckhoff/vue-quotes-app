@@ -14,8 +14,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -30,9 +29,16 @@ export default {
     async getQuote() {
       this.loading = true
       try {
-        const response = await axios.get('https://www.quoterism.com/api/quotes/random')
-        this.quote = response.data.text
-        this.author = response.data.author
+        const response = await axios.get('https://quotes15.p.rapidapi.com/quotes/random/?language_code=en', {
+            headers: {
+              'x-rapidapi-host': 'quotes15.p.rapidapi.com',
+              'x-rapidapi-key': '52fa09b461mshdbcb0513dbbe72ep10c9ddjsnab495abd3774'
+      
+      },  
+    });
+        console.log(response)
+        this.quote = response.data.content
+        this.author = response.data.originator.name
       } catch (error) {
         console.error('Error fetching quote:', error)
         this.quote = 'Oops! Something went wrong.'
